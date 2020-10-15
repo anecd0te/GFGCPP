@@ -3,79 +3,48 @@ using namespace std;
 struct Node
 {
 	int data;
+	Node *prev;
 	Node *next;
 };
-/*
-void Insert(int data, int n){
-	Node *temp = new Node();
-	temp->data = data;
-	temp->next = NULL;
-	if(n==1){
-		temp->next = head;
-		head = temp;
+Node *head;
+Node *GetNewNode(int x){
+	Node *newNode = new Node();
+	newNode->data = x;
+	newNode->next = NULL;
+	newNode->prev = NULL;
+	return newNode;  
+}
+void InsertAtHead(int x){
+	Node *newNode = GetNewNode(x);
+	if(head == NULL){
+		head = newNode;
 		return;
 	}
-	Node *temp1 = head;
-	for(int i = 0; i <n-2; i++){
-		temp1 = temp1->next;
-	}
-	temp->next = temp1->next;
-	temp1->next=temp;
-}*/
-Node *Insert(Node *head, int data){
-	Node *temp = new Node();
-	temp->data = data;
-	temp->next = NULL;
-	if(head==NULL){
-		head = temp;
-		//return;
-	}
-	else{
-		Node *temp1 = head;
-		while(temp1->next!=NULL)
-			temp1 = temp1->next;
-		temp1->next = temp;
-	}
-	return head;
-
+	head->prev = newNode;
+	newNode->next = head;
+	head = newNode;
 }
-void Print(Node *p){
-	if(p==NULL)
+void InsertAtTail(int x){
+	Node *newNode = GetNewNode(x);
+	if(head == NULL){
+		head = newNode;
 		return;
-	cout<<p->data;
-	Print(p->next);
-}
-void RPrint(Node *p){
-	if(p==NULL)
-		return;
-	RPrint(p->next);
-	cout<<p->data;
-}
-Node *Reverse(Node *head, Node *p){
-	if(p->next==NULL){
-		head = p;
-		return head;
 	}
-	else{
-	Reverse(head, p->next);
-	Node *q = p->next;
-	q->next = p;
-	p->next = NULL;
+	Node *temp = head;
+	while(temp->next!=NULL){
+		temp = temp->next;
+	}
+	temp->next = newNode;
+	newNode->prev = temp;
 }
-return head;
+void Print(){
+	Node *temp = head;
+	while(temp!=NULL){
+		cout<<temp->data;
+		temp = temp->next;
+	}
+	cout<<"\n";
 }
 int main(){
-	Node *head = NULL;
-	head = Insert(head,1);
-	head = Insert(head,2);
-	head = Insert(head,3);
-	head = Insert(head,4);
-	Print(head);
-	cout<<"\n";
-	RPrint(head);
-	cout<<"\n";
-	head = Reverse(head, head);
-	Print(head);
-	return 0;	
-}
 
+}
