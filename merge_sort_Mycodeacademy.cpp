@@ -21,12 +21,8 @@ void Merge_Sort(int arr[], int n){
 	if(n<2)
 		return;
 	mid = n/2;
-	/*
 	 l = new int[mid];
 	 r = new int[n-mid];
-	 */
-	l = (int*)malloc(mid*sizeof(int)); 
-	r = (int*)malloc((n- mid)*sizeof(int));
 	 for(int i = 0; i<mid; i++)
 	 	l[i] = arr[i];
 	 for(int i = mid; i<n; i++)
@@ -34,12 +30,8 @@ void Merge_Sort(int arr[], int n){
 	 Merge_Sort(l,mid);
 	 Merge_Sort(r,n-mid);
 	 Merge(arr,l,mid,r,n-mid);
-	 /*
 	 delete[] l;
 	 delete[] r;
-*/
-	free(l);
-    free(r);
 }
 int main(){
 	int arr[] = {2,4,3,8,7,6,5,13,32,12};

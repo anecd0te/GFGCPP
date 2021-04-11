@@ -29,7 +29,7 @@ int main(){
 	int n;
 	cout<<"Enter a number \n";
 	cin>>n;
-	cout<<n<<"\n";
+	cout<<n<<"\n";x
 	cout<<"Following are the list of all prime numbers till "<<n<<"\n";
 	SieveOfEratosthenes(n);
 	return 0;

@@ -33,6 +33,14 @@ Node *Insert(Node *root, char data){
 	return root;
 }
 int main(){
+		/*Code To Test the logic
+	  Creating an example tree
+	            M
+			   / \
+			  B   Q
+			 / \   \
+			A   C   Z
+    */
 	Node *root = NULL;
 	root = Insert(root, 'M');
 	root = Insert(root, 'B');
