@@ -1,17 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
-void subset(char c[], int n){
-	for(int i = 0; i<(1<<n);i++){
-		for(int j=0; j<n;j++){
-			if(i&(1<<j))
-				cout<<c[j]<<"";
-		}
-		cout<<endl;
-	}
-}
 int main(){
-	char s[] = {'a','b','c'};
-	int size = sizeof(s)/sizeof(s[0]);
-	subset(s,size);
-	return 0;
+    int x = 31;
+    int y = sqrt(x);
+    // cout<<y;
+    for(int i = 1;i<y;i++){
+        if(x%i==0)
+            cout<<"not prime";
+        else cout<<"prime";
+    }
+    return 0;
 }

@@ -1,0 +1,1 @@
+{"name":"Local: get_maze_better","url":"d:\\Programming\\cpp\\pepcoding\\get_maze_better.cpp","tests":[{"id":1633081587481,"input":"2\n2","output":"hv\nvh\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\cpp\\pepcoding\\get_maze_better.cpp","group":"local","local":true}

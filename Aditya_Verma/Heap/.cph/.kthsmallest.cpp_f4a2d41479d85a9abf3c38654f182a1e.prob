@@ -1,0 +1,1 @@
+{"name":"Local: kthsmallest","url":"d:\\Programming\\cpp\\Aditya_Verma\\Heap\\kthsmallest.cpp","tests":[{"id":1645638270685,"input":"6\n7 10 4 3 20 15\n3","output":"7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\cpp\\Aditya_Verma\\Heap\\kthsmallest.cpp","group":"local","local":true}

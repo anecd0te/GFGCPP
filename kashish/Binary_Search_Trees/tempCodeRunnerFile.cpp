@@ -1,0 +1,1 @@
+root->right = conbst(root->right, x);

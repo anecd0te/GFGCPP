@@ -1,0 +1,2 @@
+1) for using getline(cin,str) after using cin>>
+cin.ignore(numeric_limits<streamsize>::max(), '\n');

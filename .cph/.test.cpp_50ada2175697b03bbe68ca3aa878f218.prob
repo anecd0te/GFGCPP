@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"d:\\Programming\\cpp\\test.cpp","tests":[{"id":1632226258241,"input":"5 3 4","output":"It is pythagorean triplet"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\cpp\\test.cpp","group":"local","local":true}

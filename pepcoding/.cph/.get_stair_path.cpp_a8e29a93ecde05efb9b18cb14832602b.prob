@@ -1,0 +1,1 @@
+{"name":"Local: get_stair_path","url":"d:\\Programming\\cpp\\pepcoding\\get_stair_path.cpp","tests":[{"id":1633073437802,"input":"3","output":"[111, 12, 21, 3]"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\cpp\\pepcoding\\get_stair_path.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: malloc_calloc","url":"d:\\Programming\\cpp\\mycodeschool\\malloc_calloc.cpp","tests":[{"id":1636281401597,"input":"5\n1 2 3 4 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\cpp\\mycodeschool\\malloc_calloc.cpp","group":"local","local":true}

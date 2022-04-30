@@ -1,0 +1,1 @@
+{"name":"Local: keypad_comb","url":"d:\\Programming\\cpp\\pepcoding\\keypad_comb.cpp","tests":[{"id":1633071208976,"input":"78","output":"tv tw tx uv uw ux"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\cpp\\pepcoding\\keypad_comb.cpp","group":"local","local":true}
