@@ -1,80 +1,90 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-void bubble(vector<int> &arr)
+int solve(vector<int> arr, vector<int> &subarray)
 {
-    int n = arr.size();
-    bool swapped;
-    for(int i = 0; i<n-1; i++)
+    int max_sum = 0;
+    for(int i = 0; i<arr.size(); i++)
     {
-        swapped = false;
-        for(int j = 0; j<n;j++)
+        for(int j = i+1; j<arr.size(); j++)
         {
-            if(arr[j]>arr[j+1])
+            int sum = 0;
+            for(int k = i; k<=j; k++)
             {
-                swap(arr[j], arr[j+1]);
-                swapped = true;
+                sum+= arr[k];
+            }
+            if(sum>max_sum)
+            {
+                subarray.clear();
+                max_sum = sum;
+                subarray.push_back(i);
+                subarray.push_back(j);
             }
         }
-        if(!swapped)
-            return;
-
     }
+    return max_sum;
 }
 
-void selection(vector<int> &arr)
+int better(vector<int> arr, vector<int> &subarray)
 {
-    int min_idx;
-    int n = arr.size();
-    for(int i = 0; i<n-1; i++)
+    int max_sum = INT_MIN;
+    for(int i = 0; i<arr.size(); i++)
     {
-        min_idx = i;
-        for(int j = i+1; j<n; j++)
+        int sum = 0;
+        for(int j = i; j<arr.size(); j++)
         {
-            if(arr[j]<arr[min_idx])
+            sum += arr[j];
+            if(sum >  max_sum)
             {
-                min_idx = j;
+                max_sum = sum;
+                subarray.clear();
+                subarray.push_back(i);
+                subarray.push_back(j);
             }
         }
-        // swap(arr[min_idx], arr[i]);
-        int key = arr[min_idx];
-        while(min_idx>i)
-        {
-            arr[min_idx] = arr[min_idx-1];
-            min_idx--;
-        }
-        arr[i] = key;
-
     }
+    return max_sum;
 }
 
-void insertion(vector<int> &arr)
+
+int best(vector<int> arr, vector<int> &subarray)
 {
-    int n = arr.size();
-    int key,j;
-    for(int i = 1; i<n; i++)
+    int max_sum = arr[0];
+    int sum = 0, start = 0;
+    for(int i = 0; i<arr.size(); i++)
     {
-        key = arr[i];
-        j = i-1;
-        while(j>=0 && arr[j]>key)
+        sum = max(arr[i], sum+arr[i]);
+        if(sum>max_sum)
         {
-            arr[j+1]= arr[j];
-            j--;
+            max_sum = sum;
+            subarray.clear();
+            subarray.push_back(start);
+            subarray.push_back(i);
         }
-        arr[++j] = key;
+        if(sum<0)
+        {
+            start = i+1;
+            sum = 0;
+        }
+
+        if(sum<0)
+        {
+            start = i+1;
+            sum = 0;
+        }
     }
+    return max_sum;
 }
+
 int main()
 {
-    vector<int> arr = {64, 25, 12, 22, 11};
-
-    // bubble(arr);
-    // selection(arr);
-    insertion(arr);
-    for(auto x : arr)
+    vector<int> arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    vector<int> subarray;
+    // cout<<solve(arr, subarray);
+    // cout<<better(arr, subarray);
+    cout<<best(arr, subarray);
+    for(auto x : subarray)
     {
         cout<<x<<" ";
     }
-
     return 0;
 }
